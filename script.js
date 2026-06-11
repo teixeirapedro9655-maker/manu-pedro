@@ -1,4 +1,5 @@
 const startDate = new Date("2025-12-10T00:00:00");
+const youtubeMusicLink = "https://www.youtube.com/watch?v=l7e_NxisJ5E&list=RDl7e_NxisJ5E&start_radio=1";
 
 function updateCounter() {
   const now = new Date();
@@ -74,7 +75,7 @@ if (modal) {
 const musicBtn = document.getElementById("musicBtn");
 if (musicBtn) {
   musicBtn.addEventListener("click", () => {
-    window.open("https://www.youtube.com/results?search_query=Eu+e+Minha+Casa+Jullyane+Nos+Dois", "_blank", "noopener,noreferrer");
+    window.open(youtubeMusicLink, "_blank", "noopener,noreferrer");
   });
 }
 
