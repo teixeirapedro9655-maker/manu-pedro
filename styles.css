@@ -95,7 +95,7 @@ main {
   inset: 0;
   background:
     linear-gradient(rgba(62, 31, 43, .28), rgba(62, 31, 43, .36)),
-    url("foto-04.webp") center/cover no-repeat;
+    url("foto-10.webp") center/cover no-repeat;
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
