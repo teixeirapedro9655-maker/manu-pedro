@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manu & Pedro | Nosso primeiro Dia dos Namorados</title>
+  <meta name="description" content="Um presente de amor para Manuela, feito por Pedro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+  <div class="music-bar">
+    <button id="musicBtn" class="music-btn" aria-label="Abrir música do casal">♪ Tocar nossa música</button>
+    <span>Eu e Minha Casa — Jullyane / Nós Dois</span>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg"></div>
+      <div class="hero-card reveal">
+        <p class="eyebrow">Nosso primeiro Dia dos Namorados</p>
+        <h1>Manu & Pedro</h1>
+        <p class="subtitle">Para a mulher que me ensinou o quão bom é amar.</p>
+        <div class="date-pill">Desde 10/12/2025</div>
+        <button class="primary" onclick="document.querySelector('#carta').scrollIntoView({behavior:'smooth'})">Abrir meu coração</button>
+      </div>
+    </section>
+
+    <section class="counter-section reveal">
+      <p class="small-title">O tempo passa rápido quando Deus escreve uma história bonita</p>
+      <h2>Estamos vivendo nossa história há</h2>
+      <div class="counter" id="counter">
+        <div><strong id="days">0</strong><span>dias</span></div>
+        <div><strong id="hours">0</strong><span>horas</span></div>
+        <div><strong id="minutes">0</strong><span>minutos</span></div>
+        <div><strong id="seconds">0</strong><span>segundos</span></div>
+      </div>
+      <p class="counter-note">E eu escolheria você de novo em cada um deles, vida.</p>
+    </section>
+
+    <section class="verse reveal">
+      <p>“O cordão de três dobras não se quebra tão depressa.”</p>
+      <span>Eclesiastes 4:12</span>
+    </section>
+
+    <section class="story reveal" id="historia">
+      <div class="section-head">
+        <p class="small-title">Nossa história</p>
+        <h2>Antes de sermos amor, Deus já cuidava dos detalhes.</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>A vergonha da viagem</h3>
+          <p>Eu lembro da vergonha que eu tinha de chegar para falar contigo. Mas também lembro das risadas, das brincadeiras e de como tudo começou a fluir de um jeito leve.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Amizade que virou amor</h3>
+          <p>Nem sempre fomos namorados. Um dia fomos amigos, colegas, companheiros de risada. A confiança cresceu, a amizade virou paixão, e a paixão virou amor.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Nosso propósito</h3>
+          <p>Nosso relacionamento nasceu com uma base forte: o desejo de servir a Deus. Mesmo quando não é fácil, eu creio que Ele está nos moldando para algo maior.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Os momentos que eu guardo</h3>
+          <p>A viagem, o quadro que pintamos, a massinha, os lanches no Torradão e no espetinho, os filmes, a praia e tantas lembranças que eu vou levar para toda a vida.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>O homem que você me ajudou a ser</h3>
+          <p>Contigo eu mudei. Aprendi a cuidar melhor de mim, de ti, da nossa história. Você me motiva a crescer e me ajuda a ser um homem melhor.</p>
+        </article>
+        <article>
+          <span>06</span>
+          <h3>É nós, amor</h3>
+          <p>Nem sempre foi fácil e nem sempre será, mas nós vamos nos escolher dia após dia. Eu, você e Deus, caminhando juntos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery reveal" id="fotos">
+      <div class="section-head">
+        <p class="small-title">Nossas fotos</p>
+        <h2>Pedacinhos da vida que eu amo viver contigo.</h2>
+      </div>
+      <div class="photo-grid" id="photoGrid"></div>
+    </section>
+
+    <section class="video-section reveal">
+      <div class="section-head">
+        <p class="small-title">Um pedacinho nosso</p>
+        <h2>Porque até os detalhes simples viram memória quando é com você.</h2>
+      </div>
+      <video controls playsinline preload="metadata" poster="assets/photos/foto-01.webp">
+        <source src="assets/video/nosso-video.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="qualities reveal">
+      <div class="section-head">
+        <p class="small-title">Sobre você</p>
+        <h2>Manu, você é um presente de Deus para mim.</h2>
+      </div>
+      <div class="chips">
+        <span>Sábia</span><span>Meiga</span><span>Fofa</span><span>Querida</span><span>Respeitosa</span><span>Incrível</span><span>Linda</span><span>Minha vida</span><span>Meu lírio do vale</span><span>Minha rosa</span>
+      </div>
+    </section>
+
+    <section class="promises reveal">
+      <div class="promise-card">
+        <p class="small-title">O que eu desejo para nós</p>
+        <h2>Uma casa, uma vida, um propósito.</h2>
+        <p>Eu sonho com o nosso futuro: nossa casa, nossas coisas, talvez um cachorro, talvez filhos. Só Deus sabe. Mas se for contigo, eu tenho certeza de uma coisa: vou amar cada segundo.</p>
+      </div>
+      <div class="promise-card accent">
+        <h2>Eu prometo escolher você.</h2>
+        <p>Nos dias fáceis e nos dias difíceis. Nas risadas e nos ajustes. No começo, no meio e em tudo que Deus ainda vai construir em nós.</p>
+      </div>
+    </section>
+
+    <section class="letter reveal" id="carta">
+      <div class="letter-paper">
+        <p class="small-title">Carta para minha vida</p>
+        <h2>Manu, meu amor…</h2>
+        <p>Amor, no nosso primeiro Dia dos Namorados, eu queria te entregar algo que ficasse guardado não só em uma tela, mas também no teu coração.</p>
+        <p>Esse tempo contigo passou muito rápido, mas marcou minha vida de um jeito que eu nunca tinha vivido. Eu lembro da vergonha da viagem, das risadas, das conversas, dos momentos simples e dos dias que se tornaram inesquecíveis só porque você estava comigo.</p>
+        <p>Nosso relacionamento começou com uma base que eu valorizo muito: o propósito de servir a Deus. Eu sei que nem sempre é fácil, mas creio que Ele está nos moldando para que a gente cresça, amadureça e viva algo bonito diante dEle.</p>
+        <p>Você mudou minha vida, amor. Eu aprendi a cuidar melhor de mim, aprendi a cuidar melhor de você, aprendi a olhar para o futuro com mais responsabilidade. Você me motiva a crescer. Você me inspira a ser melhor. E eu sou muito grato a Deus por tua vida.</p>
+        <p>Tu é sábia, meiga, fofa, querida, respeitosa, incrível e linda. Mas, além de tudo isso, tu tem um coração imenso. Um coração que me alcança, me ensina, me acalma e me aproxima do que eu quero ser.</p>
+        <p>Eu amo nossas lembranças: a viagem, o quadro que pintamos, a massinha que modelamos, os lanches, os filmes, a praia, as fotos, as brincadeiras e todos os detalhes que parecem pequenos, mas que para mim são gigantes.</p>
+        <p>Nem sempre fomos namorados. Um dia fomos amigos, colegas, e tudo foi acontecendo. A amizade virou confiança, a confiança virou paixão, e a paixão virou esse amor que hoje eu tenho tanto orgulho de sentir.</p>
+        <p>Vida, meu desejo para os próximos meses e anos é simples: é nós. Eu, você e Deus, caminhando juntos. Que a gente se ame mais, se respeite mais, se entenda mais e cresça mais. Que nosso amor também alcance outras vidas pelo poder do evangelho.</p>
+        <p>Você é meu lírio do vale, minha rosa, meu bem mais precioso. Eu te amo muito, muito mesmo. E se for contigo, eu tenho certeza: vou amar cada segundo dessa vida.</p>
+        <p class="signature">Com todo o meu amor,<br>Pedro</p>
+      </div>
+    </section>
+
+    <section class="final reveal">
+      <p>“O amor tudo sofre, tudo crê, tudo espera, tudo suporta.”</p>
+      <span>1 Coríntios 13:7</span>
+      <h2>Feliz Dia dos Namorados, minha vida. O primeiro de muitos.</h2>
+      <button class="primary" onclick="window.scrollTo({top:0, behavior:'smooth'})">Voltar ao começo</button>
+    </section>
+  </main>
+
+  <div class="modal" id="photoModal" aria-hidden="true">
+    <button class="close" id="closeModal">×</button>
+    <img id="modalImg" alt="Foto de Manu e Pedro" />
+  </div>
+
+  <script>
+    window.PHOTOS = ["foto-01.webp", "foto-02.webp", "foto-03.webp", "foto-04.webp", "foto-05.webp", "foto-06.webp", "foto-07.webp", "foto-08.webp", "foto-09.webp", "foto-10.webp", "foto-11.webp", "foto-12.webp", "foto-13.webp", "foto-14.webp", "foto-15.webp", "foto-16.webp", "foto-17.webp", "foto-18.webp", "foto-19.webp"];
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
