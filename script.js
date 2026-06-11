@@ -17,7 +17,7 @@ updateCounter(); setInterval(updateCounter, 1000);
 const grid = document.getElementById('photoGrid');
 window.PHOTOS.forEach((file, i)=>{
   const img = document.createElement('img');
-  img.src = `assets/photos/${file}`;
+ img.src = `${file}`;
   img.alt = `Memória de Manu e Pedro ${i+1}`;
   img.loading = 'lazy';
   img.addEventListener('click',()=>openModal(img.src));
