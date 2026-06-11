@@ -1,52 +1,103 @@
+const startDate = new Date("2025-12-10T00:00:00");
 
-const startDate = new Date('2025-12-10T00:00:00');
-function updateCounter(){
+function updateCounter() {
   const now = new Date();
-  const diff = Math.max(0, now - startDate);
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor(diff / 3600000) % 24;
-  const minutes = Math.floor(diff / 60000) % 60;
+  let diff = now - startDate;
+
+  if (diff < 0) diff = 0;
+
   const seconds = Math.floor(diff / 1000) % 60;
-  document.getElementById('days').textContent = days;
-  document.getElementById('hours').textContent = hours;
-  document.getElementById('minutes').textContent = minutes;
-  document.getElementById('seconds').textContent = seconds;
+  const minutes = Math.floor(diff / (1000 * 60)) % 60;
+  const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  if (daysEl) daysEl.textContent = days;
+  if (hoursEl) hoursEl.textContent = hours;
+  if (minutesEl) minutesEl.textContent = minutes;
+  if (secondsEl) secondsEl.textContent = seconds;
 }
-updateCounter(); setInterval(updateCounter, 1000);
 
-const grid = document.getElementById('photoGrid');
-window.PHOTOS.forEach((file, i)=>{
-  const img = document.createElement('img');
- img.src = `${file}`;
-  img.alt = `Memória de Manu e Pedro ${i+1}`;
-  img.loading = 'lazy';
-  img.addEventListener('click',()=>openModal(img.src));
-  grid.appendChild(img);
-});
+setInterval(updateCounter, 1000);
+updateCounter();
 
-const modal = document.getElementById('photoModal');
-const modalImg = document.getElementById('modalImg');
-function openModal(src){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); modalImg.src=src; }
-document.getElementById('closeModal').onclick=()=>{ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
-modal.addEventListener('click', e=>{ if(e.target===modal) document.getElementById('closeModal').click(); });
+const photoGrid = document.getElementById("photoGrid");
+const modal = document.getElementById("photoModal");
+const modalImg = document.getElementById("modalImg");
+const closeModal = document.getElementById("closeModal");
 
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+if (photoGrid && Array.isArray(window.PHOTOS)) {
+  window.PHOTOS.forEach((file, index) => {
+    const card = document.createElement("button");
+    card.className = "photo-card";
+    card.type = "button";
+    card.setAttribute("aria-label", `Abrir memória de Manu e Pedro ${index + 1}`);
 
-function spawnHeart(){
-  const h=document.createElement('div');
-  h.className='heart'; h.textContent=Math.random()>.5?'♥':'♡';
-  h.style.left=Math.random()*100+'vw';
-  h.style.fontSize=(14+Math.random()*24)+'px';
-  h.style.animationDuration=(5+Math.random()*5)+'s';
-  document.getElementById('hearts').appendChild(h);
-  setTimeout(()=>h.remove(),10000);
+    const img = document.createElement("img");
+    img.src = file;
+    img.alt = `Memória de Manu e Pedro ${index + 1}`;
+    img.loading = "lazy";
+
+    card.appendChild(img);
+    card.addEventListener("click", () => {
+      if (!modal || !modalImg) return;
+      modalImg.src = file;
+      modalImg.alt = `Memória de Manu e Pedro ${index + 1}`;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    });
+
+    photoGrid.appendChild(card);
+  });
 }
-setInterval(spawnHeart, 650);
 
-const musicBtn = document.getElementById('musicBtn');
-musicBtn.addEventListener('click', ()=>{
-  window.open('https://www.youtube.com/results?search_query=Eu+e+minha+casa+Jullyane+N%C3%B3s+Dois', '_blank', 'noopener,noreferrer');
-});
+if (closeModal && modal) {
+  closeModal.addEventListener("click", () => {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+  });
+}
+
+if (modal) {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
+}
+
+const musicBtn = document.getElementById("musicBtn");
+if (musicBtn) {
+  musicBtn.addEventListener("click", () => {
+    window.open("https://www.youtube.com/results?search_query=Eu+e+Minha+Casa+Jullyane+Nos+Dois", "_blank", "noopener,noreferrer");
+  });
+}
+
+const revealElements = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach((el) => observer.observe(el));
+
+const hearts = document.getElementById("hearts");
+if (hearts) {
+  for (let i = 0; i < 28; i++) {
+    const heart = document.createElement("span");
+    heart.textContent = "♡";
+    heart.style.left = `${Math.random() * 100}%`;
+    heart.style.animationDelay = `${Math.random() * 10}s`;
+    heart.style.animationDuration = `${8 + Math.random() * 8}s`;
+    heart.style.fontSize = `${12 + Math.random() * 18}px`;
+    hearts.appendChild(heart);
+  }
+}
